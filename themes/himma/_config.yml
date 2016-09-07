@@ -1,6 +1,6 @@
 # Blog info
 blog_name: kylin
-slogan: 涧树含朝雨，山鸟哢馀春。我有一瓢酒，可以慰风尘。
+slogan: 醉里论道,醒时折花。
 url: ruolinxue.github.io
 
 # Set avatar (Absolute url and relative url)
@@ -11,6 +11,28 @@ favicon:
 
 # For seo
 keywords: kylin,前端,设计,Hexo主题,前端开发,用户体验,设计,frontend,design,nodejs,JavaScript
+
+head_link:
+  - type: Github
+    icon: icon-github
+    text_key: Github
+    text_value_url: https://github.com/ruolinxue
+    target_blank: true
+  - type: weibo
+    icon: icon-weibo1
+    text_key: 新浪微博
+    text_value_url:
+    target_blank: true
+  - type: Twitter
+    icon: icon-twitter
+    text_key: Twitter
+    text_value_url:
+    target_blank: true
+  - type: facebook
+    icon: icon-facebook1
+    text_key: facebook
+    text_value_url:
+    target_blank: true
 
 home_nav:
   - name: Blog
@@ -184,8 +206,8 @@ link:
 
 project:
   - type: personal
-    name: fexo
-    url: https://github.com/forsigner/fexo
+    name: himma
+    url: https://github.com/forsigner/himma
     intro: A minimalist design theme for hexo
   # - type: company
   #   name: Fexo

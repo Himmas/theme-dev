@@ -21,6 +21,7 @@ gulp.task('hexo-g', shell.task([
     'cd ../../ \n hexo g'
 ]))
 
+
 gulp.task('sass', function () {
     return gulp.src('./source/sass/*.scss')
         .pipe(sourcemaps.init())

@@ -1,0 +1,24 @@
+<div class="head-box">
+    <div class="head-inner">
+        <div class="info-box">
+            <a href="/" class="avatar">
+                <img src="<%= theme.avatar %>" alt="" />
+            </a>
+            <div class="detail-info">
+                <h1 class="name"><%= theme.blog_name %></h1>
+                <div class="slogan"><%= theme.slogan %></div>
+                <hr>
+                <div class="link-box">
+                    <% theme.head_link.forEach(function(item, i){ %>
+                    <% if(i<4) {%>
+                    <a class="link-item-box" href="<%= item.text_value_url || '/' %>">
+                        <i class="iconfont <%= item.icon%>"></i>
+                        <span><%= item.text_key%></span>
+                    </a>
+                    <% } %>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

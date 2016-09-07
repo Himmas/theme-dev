@@ -90,6 +90,10 @@ a {
   background-color: transparent;
 }
 
+a,a:active,a:hover{
+  text-decoration: none;
+}
+
 /**
  * Improve readability of focused elements when they are also in an
  * active/hover state.
