@@ -2,6 +2,7 @@ $head-box-height: 120px;
 $head-inner-height: 160px;
 $avatar-space: 20px;
 $inner-box-width: 500px;
+$menu-size: 35px;
 
 .head-box {
     position: relative;
@@ -70,6 +71,24 @@ $inner-box-width: 500px;
                             line-height: 2em;
                         }
                     }
+                }
+            }
+        }
+        .menu-box{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            font-size: 0;
+            .menu-item{
+                display: inline-block;
+                width: $menu-size;
+                height: $menu-size;
+                text-align: center;
+                margin-left: 2px;
+                i{
+                    color: #fff;
+                    line-height: $menu-size;
+                    font-size: 20px;
                 }
             }
         }

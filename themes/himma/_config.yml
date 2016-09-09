@@ -50,27 +50,46 @@ home_nav:
 
 # config page nav
 page_nav:
-  - name: 博客
+  - name: 首页
+    url: /
+    target_blank: false # 不在新页面打开
+    icon: icon-home
+    background_color: fbd5d4
+  - name: 归档
     url: /archives/
     target_blank: false # 不在新页面打开
+    icon: icon-filing
+    background_color: e6dcef
   - name: 分类
     url: /category/
     target_blank: false
+    icon: icon-sort
+    background_color: d9e4f0
   - name: 标签
     url: /tag/
     target_blank: false
+    icon: icon-tag
+    background_color: daf1f9
   - name: 友链
     url: /link/
     target_blank: false
-  - name: 关于
-    url: /about/
-    target_blank: false
+    icon: icon-link
+    background_color: d9f0e8
   - name: RSS
     url: /atom.xml
     target_blank: true # 在新页面打开
+    icon: icon-rss
+    background_color: beebe5
+  - name: 相册
+    url: /album/
+    target_blank: false # 在新页面打开
+    icon: icon-image
+    background_color: e5ebbb
   - name: 搜索
     url: /search/
     target_blank: false # 在新页面打开
+    icon: icon-search
+    background_color: f3e8b5
 
 page_nav_style: CIRCLE  # CIRCLE|ROUND_RECT
 
