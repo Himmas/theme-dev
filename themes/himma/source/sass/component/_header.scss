@@ -91,6 +91,54 @@ $menu-size: 35px;
                     font-size: 20px;
                 }
             }
+            .menu-item:nth-child(1){
+                background-color: #fbd5d4;
+            }
+            .menu-item:nth-child(2){
+                background-color: #e6dcef;
+            }
+            .menu-item:nth-child(3){
+                background-color: #d9e4f0;
+            }
+            .menu-item:nth-child(4){
+                background-color: #daf1f9;
+            }
+            .menu-item:nth-child(5){
+                background-color: #d9f0e8;
+            }
+            .menu-item:nth-child(6){
+                background-color: #beebe5;
+            }
+            .menu-item:nth-child(7){
+                background-color: #e5ebbb;
+            }
+            .menu-item:nth-child(8){
+                background-color: #f3e8b5;
+            }
+            .menu-item:nth-child(1):hover{
+                background-color: #ffb1ae;
+            }
+            .menu-item:nth-child(2):hover{
+                background-color: #dbbff5;
+            }
+            .menu-item:nth-child(3):hover{
+                background-color: #b4d3f5;
+            }
+            .menu-item:nth-child(4):hover{
+                background-color: #b6e8f9;
+            }
+            .menu-item:nth-child(5):hover{
+                background-color: #b0f1da;
+            }
+            .menu-item:nth-child(6):hover{
+                background-color: #9feae0;
+            }
+            .menu-item:nth-child(7):hover{
+                background-color: #e1ec93;
+            }
+            .menu-item:nth-child(8):hover{
+                background-color: #f7e48d;
+            }
         }
     }
 }
