@@ -11,7 +11,7 @@
                 <div class="link-box">
                     <% theme.head_link.forEach(function(item, i){ %>
                     <% if(i<4) {%>
-                    <a class="link-item-box" href="<%= item.text_value_url || '/' %>">
+                    <a class="link-item-box td02" href="<%= item.text_value_url || '/' %>">
                         <i class="iconfont <%= item.icon%>"></i>
                         <span><%= item.text_key%></span>
                     </a>
@@ -22,7 +22,7 @@
         </div>
         <div class="menu-box">
             <% theme.page_nav.forEach(function (item) { %>
-                <a class="menu-item" href="<%= item.url%>" ><i class="iconfont <%= item.icon%>"></i></a>
+                <a class="menu-item td02" href="<%= item.url%>" ><i class="iconfont <%= item.icon%>"></i></a>
             <% }) %>
         </div>
     </div>
