@@ -4,16 +4,70 @@
         i.article-item{
             color: #d5d5d5;
             font-size: 20px;
+            background: #fff;
+        }
+        .head-label{
+            position: relative;
+            display: block;
+            width: $icon-width;
+            font-size: 12px;
+            color: #888;
+            z-index: 9;
+            left: ($left-line - $icon-width)/2;
+            text-align: center;
+            background: #fff;
+        }
+        span{
+            position: absolute;
+            left: $left-blank;
+            color: #444;
         }
     }
     i.article-item{
         position: relative;
         display: inline-block;
-        width: 40px;
-        left: -20px;
+        width: $icon-width;
+        left: ($left-line - $icon-width)/2;
         color: #aaa;
         z-index: 9;
         text-align: center;
+    }
+    .article-box-body{
+        .year-item{
+            position: relative;
+            margin: 60px 0;
+            h2{
+                margin-left: $left-blank;
+                color: #555555;
+            }
+            &:before{
+                content: " ";
+                position: absolute;
+                top: 50%;
+                margin-top: -$year-circle/2;
+                width: $year-circle;
+                height: $year-circle;
+                left: ($left-line - $year-circle)/2;
+                background: #bbb;
+                border-radius: 50%;
+                z-index: 9;
+            }
+            &.item-title-0:before {
+                background: #1abc9c;
+            }
+            &.item-title-1:before {
+                background: #3498db;
+            }
+            &.item-title-2:before {
+                background: #9b59b6;
+            }
+            &.item-title-3:before {
+                background: #e67e22;
+            }
+            &.item-title-4:before {
+                background: #e74c3c;
+            }
+        }
     }
 }
 .article-list-box:after{
@@ -22,7 +76,7 @@
     content: " ";
     position: absolute;
     left: 1px;
-    margin-left: -2px;
+    margin-left: -1px;
     background: #f5f5f5;
     top: 0;
 }

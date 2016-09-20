@@ -3,7 +3,7 @@
     background: #fff;
     width: 100%;
     height: $head-box-height;
-    border-top: 5px solid #666;
+    border-top: $head-line solid #666;
     .head-inner{
         position: absolute;
         top: 0;left: 0;right: 0;bottom: 0;
