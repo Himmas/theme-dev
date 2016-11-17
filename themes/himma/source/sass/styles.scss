@@ -4,12 +4,13 @@
 //@import 'fonts';
 @import 'normalize';
 @import 'base';
-//@import 'highlight-js';
+@import 'highlight-js';
 //@import 'common';
 //@import 'type';
 //@import 'pages/index';
 //@import 'component/index';
 @import 'component/header';
 @import "component/article-list";
+@import "pages/post";
 @import "iconfont";
 @import "global";

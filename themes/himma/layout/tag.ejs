@@ -1,10 +1,12 @@
-<div class="content content-tag">
-  <%- partial('_partial/component/page-header', {location: '标签'}) %>
-  <%- partial('_partial/component/tag-box') %>
-  <%- getPostListsDom(site.tags.sort('name'))%>
-</div>
+<!--<div class="content content-tag">-->
+  <!--<%- partial('_partial/component/page-header', {location: '标签'}) %>-->
+  <!--<%- partial('_partial/component/tag-box') %>-->
+  <!--<%- getPostListsDom(site.tags.sort('name'))%>-->
+<!--</div>-->
 
-<%- partial('_partial/component/back-top', {showBacktop: theme.backtop.tag}) %>
+<%- partial('_partial/component/header') %>
+
+<!--<%- partial('_partial/component/back-top', {showBacktop: theme.backtop.tag}) %>-->
 
 <%
   function getPostListsDom(tags) {

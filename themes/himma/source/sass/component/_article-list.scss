@@ -1,3 +1,6 @@
+.list-container{
+    padding: $avatar-space $head-inner-height;
+}
 .article-list-box{
     position: relative;
     .head{
@@ -33,7 +36,7 @@
         text-align: center;
     }
     .article-box-body{
-        .year-item{
+        .collection-title{
             position: relative;
             margin: 60px 0;
             h2{
