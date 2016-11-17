@@ -1,7 +1,16 @@
 ---
 title: Hello World
+
 ---
 Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
+
+## 开发版本
+
+### 测试中文
+
+**重要**: 在发布后构建的文件在 Github 仓库的 `/dist`  文件夹。为了使用 Github 上 Vue 最新的资源，你得自己构建。 
+
+#### 这是H4
 
 ## Quick Start
 
@@ -329,3 +338,5 @@ resolve: {
 
 
 More info: [Deployment](https://hexo.io/docs/deployment.html)
+
+

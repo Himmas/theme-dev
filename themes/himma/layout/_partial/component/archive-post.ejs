@@ -1,0 +1,45 @@
+<div class="container list-container">
+    <div class="article-list-box">
+        <div class="head">
+            <label class="head-label"><%= location %></label>
+            <i class="iconfont icon-location article-item"></i>
+            <span>非常好!目前工计183篇日志。继续努力。</span>
+        </div>
+        <div class="article-box-body">
+            <% var year,count=0 %>
+            <% site.posts.sort('date',-1).forEach(function (post) { %>
+            <% if(year !== post.date.year()){%>
+                <% year = post.date.year() %>
+                <div class="collection-title item-title-<%= count%5 %>">
+                    <h2><%= year %></h2>
+                </div>
+                <% count++ %>
+            <% }%>
+            <article class="article-item article-type-normal">
+                <header class="post-header td02">
+                    <h1 class="post-title">
+                        <a href="/<%= post.canonical_path %>" class="post-title-link">
+                            <span><%= post.title %></span>
+                        </a>
+                    </h1>
+                    <div class="post-meta">
+                        <time class="post-time"><%= getCurrentDate(post.date) %></time>
+                    </div>
+                </header>
+            </article>
+            <% }) %>
+        </div>
+    </div>
+</div>
+
+<%
+//======================================================
+// Helper function
+//======================================================
+
+function getCurrentDate(date){
+    var month = (date.month()/10)<1? `0${date.month()}`:`${date.month()}`
+    var day = (date.date()/10)<1? `0${date.date()}`:`${date.date()}`
+    return `${month}-${day}`
+}
+%>

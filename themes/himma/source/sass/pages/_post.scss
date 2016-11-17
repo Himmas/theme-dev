@@ -1,5 +1,30 @@
 .article-container {
     padding: $avatar-space;
+    .page-bar{
+        overflow: hidden;
+        margin-top: 60px;
+        padding: 10px;
+        white-space: nowrap;
+        border-top: 1px solid #eee;
+        a{
+            color: #888;
+            font-size: .8em;
+            width: 50%;
+            display: inline-block;
+            i{
+                font-size: .6em;
+            }
+        }
+        a.prev-btn{
+            text-align: left;
+        }
+        a.next-btn{
+            text-align: right;
+        }
+        a:hover{
+            color: #666;
+        }
+    }
 }
 
 //.post-header {
@@ -124,13 +149,13 @@
         //    visibility: hidden;
         //}
         h2 {
-            padding-bottom: 0.7em;
+            margin: 52px 0 1.2em;
             border-bottom: 1px solid #ddd;
         }
         h3:before {
             content: "#";
             color: #42b983;
-            padding: .5em;
+            padding-right: .5em;
             font-weight: bold;
         }
         figure,

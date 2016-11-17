@@ -1,23 +1,25 @@
 <!--<div class="content content-archive">-->
-  <!--<%- partial('_partial/component/header', {location: '博客'}) %>-->
+<!--<%- partial('_partial/component/header', {location: '博客'}) %>-->
 
-  <!--<div class="post-list-box archive-body">-->
-    <!--<%- getPostListsDom(page.posts) %>-->
-  <!--</div>-->
+<!--<div class="post-list-box archive-body">-->
+<!--<%- getPostListsDom(page.posts) %>-->
+<!--</div>-->
 
-  <!--<div class="archive-footer">-->
-    <!--<%- partial('_partial/component/pagination') %>-->
-  <!--</div>-->
+<!--<div class="archive-footer">-->
+<!--<%- partial('_partial/component/pagination') %>-->
+<!--</div>-->
 <!--</div>-->
 
 <!--<%- partial('_partial/component/back-top', {showBacktop: theme.backtop.archive}) %>-->
-<%- partial('_partial/component/header', {location: '博客'}) %>
 
+<%- partial('_partial/component/header') %>
+
+<%- partial('_partial/component/archive-post', {location: '归档'}) %>
 <%
-
 //======================================================
 // Helper function
 //======================================================
+
 
 /**
  * transform page.posts to an array
@@ -25,11 +27,11 @@
  * @return {Arrary} posts arrary
  */
 function postsToArray(pagePosts) {
-  var postsArr = []
-  pagePosts.each(function (post) {
-    postsArr.push(post);
-  });
-  return postsArr;
+    var postsArr = []
+    pagePosts.each(function (post) {
+        postsArr.push(post);
+    });
+    return postsArr;
 }
 
 /**
@@ -38,16 +40,16 @@ function postsToArray(pagePosts) {
  * @return {Arrary}  years  something like ['2016', '2015', '2014']
  */
 function getUniqueYears(posts) {
-  var years = [];
+    var years = [];
 
-  posts.forEach(function (post) {
-    var year = post.date.year();
-    if (years.indexOf(year) < 0) {
-      years.push(year);
-    }
-  });
+    posts.forEach(function (post) {
+        var year = post.date.year();
+        if (years.indexOf(year) < 0) {
+            years.push(year);
+        }
+    });
 
-  return years;
+    return years;
 };
 
 /**
@@ -56,10 +58,10 @@ function getUniqueYears(posts) {
  * @param  {String} year eg: '2014'
  * @return {Arrary} postsArr after filter
  */
- function filterPostByYear(postsArr, year) {
-  return postsArr.filter(function (post) {
-    return year === post.date.year();
-  });
+function filterPostByYear(postsArr, year) {
+    return postsArr.filter(function (post) {
+        return year === post.date.year();
+    });
 };
 
 /**
@@ -68,35 +70,35 @@ function getUniqueYears(posts) {
  * @return {Arrary}
  */
 function handlePosts(postsArr) {
-  var postLists = [];
-  var years = getUniqueYears(postsArr);
+    var postLists = [];
+    var years = getUniqueYears(postsArr);
 
-  years.forEach(function(year) {
-    postLists.push({year: year, isYear: true});
-    var thisYearPosts = filterPostByYear(postsArr, year);
-    postLists = postLists.concat(thisYearPosts);
-  });
+    years.forEach(function (year) {
+        postLists.push({year: year, isYear: true});
+        var thisYearPosts = filterPostByYear(postsArr, year);
+        postLists = postLists.concat(thisYearPosts);
+    });
 
-  return postLists;
+    return postLists;
 };
 
 /**
-* getPostListsDom
-* @param  {Object} pagePosts
-* @return {String} dom string
-*/
+ * getPostListsDom
+ * @param  {Object} pagePosts
+ * @return {String} dom string
+ */
 function getPostListsDom(posts) {
-  var dom = '<ul class="list-post">';
+    var dom = '<ul class="list-post">';
 
-  var postsArr = postsToArray(posts);
-  posts = handlePosts(postsArr);
+    var postsArr = postsToArray(posts);
+    posts = handlePosts(postsArr);
 
-  posts.forEach(function (post) {
-    var patialPath = post.isYear ? '_partial/component/item-year' : '_partial/component/item-post';
-    dom += partial(patialPath, {post: post});
-  });
+    posts.forEach(function (post) {
+        var patialPath = post.isYear ? '_partial/component/item-year' : '_partial/component/item-post';
+        dom += partial(patialPath, {post: post});
+    });
 
-  dom += '</ul>';
-  return dom;
+    dom += '</ul>';
+    return dom;
 }
 %>
