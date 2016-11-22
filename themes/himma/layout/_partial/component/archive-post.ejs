@@ -3,11 +3,11 @@
         <div class="head">
             <label class="head-label"><%= location %></label>
             <i class="iconfont icon-location article-item"></i>
-            <span>非常好!目前工计183篇日志。继续努力。</span>
+            <span>共<%= site.posts.length %>篇日志</span>
         </div>
         <div class="article-box-body">
             <% var year,count=0 %>
-            <% site.posts.sort('date',-1).forEach(function (post) { %>
+            <% page.posts.sort('date',-1).forEach(function (post) { %>
             <% if(year !== post.date.year()){%>
                 <% year = post.date.year() %>
                 <div class="collection-title item-title-<%= count%5 %>">
@@ -30,6 +30,7 @@
             <% }) %>
         </div>
     </div>
+    <%- partial('_partial/component/pagination')%>
 </div>
 
 <%

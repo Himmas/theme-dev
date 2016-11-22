@@ -1,7 +1,7 @@
 ---
-title: 常用操作命令
+title: 常用操作命令2012
 date: 2012-11-02 10:49:54
-tags: [linux]
+tags: linux
 categories: linux玩耍笔记
 ---
 ## 删除

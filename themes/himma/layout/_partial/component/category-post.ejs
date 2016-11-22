@@ -1,0 +1,89 @@
+<div class="container list-container">
+    <div class="article-list-box">
+        <div class="head">
+            <label class="head-label"><%= location %></label>
+            <i class="iconfont icon-location article-item"></i>
+            <span>非常好!目前工计183篇日志。继续努力。</span>
+        </div>
+        <div class="article-box-body">
+            <% if(!!page.category) { %>
+            <div class="collection-title item-title-0 ">
+                <h2><%= page.category %></h2>
+            </div>
+            <% page.posts.sort('date',-1).forEach(function (post) { %>
+            <% if (isCategory(page.category,post.categories)){%>
+            <article class="article-item article-type-normal">
+                <header class="post-header td02">
+                    <h1 class="post-title ml-100">
+                        <a href="/<%= post.canonical_path %>" class="post-title-link">
+                            <span><%= post.title %></span>
+                        </a>
+                    </h1>
+                    <div class="post-meta">
+                        <time class="post-time"><%= getCurrentDate(post.date) %></time>
+                    </div>
+                </header>
+            </article>
+            <%}%>
+            <%}) %>
+            <% } else{%>
+            <% var count = 0;%>
+            <% site.categories.sort('name').forEach(function (category) {%>
+            <div class="collection-title item-title-<%= count%5 %>">
+                <h2><%= category.name %></h2>
+            </div>
+            <% site.posts.sort('date',-1).forEach(function (post) { %>
+            <% if (isCategoryIn(category,post.categories)){%>
+            <article class="article-item article-type-normal">
+                <header class="post-header td02">
+                    <h1 class="post-title ml-100">
+                        <a href="/<%= post.canonical_path %>" class="post-title-link">
+                            <span><%= post.title %></span>
+                        </a>
+                    </h1>
+                    <div class="post-meta">
+                        <time class="post-time"><%= getCurrentDate(post.date) %></time>
+                    </div>
+                </header>
+            </article>
+            <%}%>
+            <%}) %>
+            <% count++ %>
+            <%}) %>
+            <%}%>
+        </div>
+    </div>
+    <% if(!!page.category && page.total>1) { %>
+    <%- partial('_partial/component/pagination')%>
+    <% } %>
+</div>
+
+<%
+//======================================================
+// Helper function
+//======================================================
+
+function getCurrentDate(date){
+    var month = (date.month()/10)<1? `0${date.month()}`:`${date.month()}`
+    var day = (date.date()/10)<1? `0${date.date()}`:`${date.date()}`
+    return `${date.year()}-${month}-${day}`
+}
+
+function isCategoryIn(category,categories){
+    var isCategoryIn = false
+    categories.forEach(function (o) {
+        if(category.name === o.name)
+            isCategoryIn = true
+    })
+    return isCategoryIn
+}
+
+function isCategory(category,categories) {
+    var isCategoryIn = false
+    categories.forEach(function (o) {
+        if(category === o.name)
+            isCategoryIn = true
+    })
+    return isCategoryIn
+}
+%>

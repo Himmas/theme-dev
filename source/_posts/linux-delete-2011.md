@@ -1,8 +1,8 @@
 ---
-title: 常用操作命令
+title: 常用操作命令2011
 date: 2011-11-02 10:49:54
-tags: [linux]
-categories: linux玩耍笔记
+tags: vue
+categories: vuejs
 ---
 ## 删除
 1、删除文件夹以及文件夹中的所有文件命令：

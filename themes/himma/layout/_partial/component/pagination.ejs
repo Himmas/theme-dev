@@ -1,11 +1,55 @@
-<% if (page.total > 1){ %>
-  <div class="pagination">
-    <nav class="page-nav">
-      <%- paginator({
-        prev_text: '<i class="icon-angle-left"></i>',
-        next_text: '<i class="icon-angle-right"></i>',
-        mid_size: 1
-      }) %>
-    </nav>
-  </div>
-<% } %>
+<nav class="pagination">
+  <% if (page.prev > 0){%>
+  <a class="extend prev" rel="prev" href="/<%= page.prev_link %>">
+    <i class="iconfont icon-prev"></i>
+  </a>
+  <% } %>
+  <!--上一页-->
+  <% if (page.current != 1){ %>
+  <a href="<%= getHref(page.current_url,1) %>" class="page-number">1</a>
+  <% } %>
+  <!--第一页-->
+
+  <% if (page.current>3){ %>
+  <span class="space">…</span>
+  <% } %>
+
+  <% if (page.current>2){ %>
+  <a href="<%= getHref(page.current_url,page.current-1) %>" class="page-number"><%= page.current-1 %></a>
+  <% } %>
+
+  <a class="page-number current" href="<%= getHref(page.current_url,page.current) %>"><%= page.current %></a>
+
+  <% if (page.current< page.total -1){ %>
+  <a href="<%= getHref(page.current_url,page.current+1) %>" class="page-number"><%= page.current+1 %></a>
+  <%} %>
+
+  <% if (page.current< page.total -2){ %>
+  <span class="space">…</span>
+  <% } %>
+
+  <% if (page.current != page.total){ %>
+  <a href="<%= getHref(page.current_url,page.total) %>" class="page-number"><%= page.total %></a>
+  <% } %>
+  <!--尾页-->
+
+  <% if(page.next<=page.total && page.next != 0) { %>
+  <a class="extend next" rel="next" href="/<%= page.next_link %>">
+    <i class="iconfont icon-next"></i>
+  </a>
+  <% } %>
+
+</nav>
+
+<%
+//======================================================
+// Helper function
+//======================================================
+
+function getHref(currentUrl,page){
+  var baseUrl = currentUrl.replace(/(.+)page\/(.*)$/g,'$1')
+  return page == 1
+          ?
+          `/${baseUrl}`:`/${baseUrl}page/${page}/`
+}
+%>

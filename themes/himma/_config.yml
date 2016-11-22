@@ -59,7 +59,7 @@ page_nav:
     target_blank: false # 不在新页面打开
     icon: icon-filing
   - name: 分类
-    url: /category/
+    url: /categories/
     target_blank: false
     icon: icon-sort
   - name: 标签

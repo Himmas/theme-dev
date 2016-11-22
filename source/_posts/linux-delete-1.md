@@ -2,7 +2,7 @@
 ---
 title: 嘿嘿嘿嘿
 date: 2016-10-01 10:49:54
-tags: [linux]
+tags: linux
 categories: linux玩耍笔记
 ---
 ## 删除
