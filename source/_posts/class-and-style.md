@@ -57,6 +57,7 @@ data: {
   }
 }
 ```
+<!--more-->
 
 This will render the same result. We can also bind to a [computed property](computed.html) that returns an object. This is a common and powerful pattern:
 

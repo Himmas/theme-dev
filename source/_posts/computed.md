@@ -180,6 +180,8 @@ computed: {
 // ...
 ```
 
+<!--more-->
+
 Now when you run `vm.fullName = 'John Doe'`, the setter will be invoked and `vm.firstName` and `vm.lastName` will be updated accordingly.
 
 ## Watchers

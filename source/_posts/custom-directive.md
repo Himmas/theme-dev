@@ -114,6 +114,7 @@ new Vue({
   }
 })
 ```
+<!--more-->
 
 {% raw %}
 <div id="hook-arguments-example" v-demo:hello.a.b="message" class="demo"></div>

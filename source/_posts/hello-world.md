@@ -62,6 +62,8 @@ a{
 </div>
 ```
 
+<!--more-->
+
 ### 测一下js
 
 ``` js
@@ -163,6 +165,7 @@ computed: {
   }
 }
 ```
+
 
 ### Array Syntax
 

@@ -119,6 +119,7 @@ new Vue({
   }
 })
 ```
+<!--more-->
 
 Result:
 {% raw %}

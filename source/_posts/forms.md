@@ -59,6 +59,7 @@ new Vue({
 </script>
 {% endraw %}
 
+<!--more-->
 
 {% raw %}
 <p class="tip">Interpolation on textareas (<code>&lt;textarea&gt;{{text}}&lt;/textarea&gt;</code>) won't work. Use <code>v-model</code> instead.</p>

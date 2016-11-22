@@ -90,6 +90,8 @@ new Vue({
 })
 ```
 
+<!--more-->
+
 The same encapsulation applies for other registerable Vue features, such as directives.
 
 ### DOM Template Parsing Caveats

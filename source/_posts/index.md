@@ -112,6 +112,8 @@ var app3 = new Vue({
 })
 ```
 
+<!--more-->
+
 {% raw %}
 <div id="app-3" class="demo">
   <span v-if="seen">Now you see me</span>

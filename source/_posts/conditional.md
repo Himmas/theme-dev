@@ -68,6 +68,8 @@ The difference is that an element with `v-show` will always be rendered and rema
 
 <p class="tip">Note that `v-show` doesn't support the `<template>` syntax, nor does it work with `v-else`.</p>
 
+<!--more-->
+
 ## v-if vs. v-show
 
 `v-if` is "real" conditional rendering because it ensures that event listeners and child components inside the conditional block are properly destroyed and re-created during toggles.
