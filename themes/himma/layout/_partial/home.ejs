@@ -1,6 +1,8 @@
-<% page.posts.forEach(function (post) {%>
-<%- partial('_partial/article',{post:post,index:true})%>
+<% page.posts.forEach(function (post,i) {%>
+<% if(i>0) { %>
 <div class="br"></div>
+<% } %>
+<%- partial('_partial/article',{post:post,index:true})%>
 <% }) %>
 <% if(page.total>1) { %>
 <div class="page-box">

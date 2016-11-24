@@ -47,7 +47,8 @@
 //======================================================
 
 function getHref(currentUrl,page){
-  var baseUrl = currentUrl.replace(/(.+)page\/(.*)$/g,'$1')
+  var baseUrl = currentUrl.replace(/(.*)page\/(.*)$/g,'$1')
+  console.log(baseUrl);
   return page == 1
           ?
           `/${baseUrl}`:`/${baseUrl}page/${page}/`
