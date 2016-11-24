@@ -1,7 +1,7 @@
 <div class="container article-container">
   <article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemprop="blogPost">
     <header class="article-header">
-      <h1 class="post-title"><%= post.title || '(no title)' %></h1>
+      <h1 class="post-title"><a href="<%- url_for(post.path) %>"><%= post.title || '(no title)' %></a></h1>
 
       <div class="article-meta">
       <span>
@@ -43,8 +43,14 @@
   </article>
   <% if (!index){ %>
   <div class="page-bar">
-    <a href="" class="prev-btn"><i class="iconfont icon-prev"></i>作为一个前端,如何机智地弄坏一台电脑</a>
-    <a href="" class="next-btn">这里是下一篇博客<i class="iconfont icon-next"></i></a>
-  </div>
+    <%if(page.prev){%>
+    <a href="<%-url_for(page.prev.path)%>" class="prev-btn"><i class="iconfont icon-prev"></i><%= page.prev.title %></a>
+    <%}else{%>
+    <a class="prev-btn"></a>
+    <%}%>
+    <%if(page.next){%>
+    <a href="<%-url_for(page.next.path)%>" class="next-btn"><%= page.next.title %><i class="iconfont icon-next"></i></a>
+    <%}%>
+    </div>
   <% } %>
 </div>

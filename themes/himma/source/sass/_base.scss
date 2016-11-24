@@ -13,7 +13,7 @@ body {
 }
 
 body {
-    background: #eeeeee;
+    background: #f5f5f5;
     .container{
         width: $container-width;
         background-color: #fff;
@@ -28,4 +28,8 @@ h1,h2,h3,h4,h5,h6{
     font-weight: bold;
     line-height: 2;
     font-family: 'Roboto Slab', 'Monda', "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+a{
+    color: #333;
 }
