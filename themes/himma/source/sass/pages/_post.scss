@@ -95,6 +95,16 @@
         }
     }
     .article-content {
+        .article-more-link{
+            margin-top: 40px;
+            text-align: center;
+            .more-btn{
+                border:2px solid #888;
+                padding:8px 20px;
+                border-radius: 4px;
+                color: #555;
+            }
+        }
         h2 {
             border-bottom: 1px solid #ddd;
         }
@@ -153,7 +163,7 @@
             border-bottom: 1px solid #ddd;
         }
         h3:before {
-            content: "#";
+            content: "§";
             color: #42b983;
             padding-right: .5em;
             font-weight: bold;

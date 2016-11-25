@@ -1,0 +1,113 @@
+<div class="container list-container">
+    <% if (!!page.tag){ %>
+    <div class="article-list-box">
+        <div class="head">
+            <label class="head-label"><%= location %></label>
+            <i class="iconfont icon-location article-item"></i>
+            <span>此标签共有<%= getTagArray(site.posts).tagObj[page.tag]%>篇日志</span>
+        </div>
+        <div class="article-box-body">
+            <% if(!!page.tag) { %>
+            <div class="collection-title item-title-0 ">
+                <h2><%= page.tag %></h2>
+            </div>
+            <% page.posts.sort('date',-1).forEach(function (post) { %>
+            <% if (isTag(page.tag,post.tags)){%>
+            <article class="article-item article-type-normal">
+                <header class="post-header td02">
+                    <h1 class="post-title ml-100">
+                        <a href="/<%= post.canonical_path %>" class="post-title-link">
+                            <span><%= post.title %></span>
+                        </a>
+                    </h1>
+                    <div class="post-meta">
+                        <time class="post-time"><%= getCurrentDate(post.date) %></time>
+                    </div>
+                </header>
+            </article>
+            <% } %>
+            <% }) %>
+            <% } %>
+        </div>
+    </div>
+    <% }else{ %>
+    <div class="tags-cloud-box">
+        <div class="head">
+            <span>当前共计<%= site.tags.length %>个标签</span>
+        </div>
+        <div class="tag-box-body">
+            <!--12px~50px  #555555 ~ #aaaaaa -->
+            <% var tags =  getTagArray(site.posts),min = tags.min,max = tags.max%>
+            <% for(var k in tags.tagObj) {%>
+            <% var thisTagCount =  tags.tagObj[k]%>
+            <% var thisTagSize =  (38*(thisTagCount - min))/(max-min) +12 %>
+            <% var v = (85*(max - thisTagCount))/(max-min) +85,color = RGB2Color(v,v,v)%>
+            <a href="/tags/<%= k %>/" class="tag" style="font-size: <%= thisTagSize %>px;color: <%= color %>;"><%= k %></a>
+            <% } %>
+        </div>
+    </div>
+    <% } %>
+    <% if(!!page.tag && page.total>1) { %>
+    <%- partial('_partial/component/pagination')%>
+    <% } %>
+</div>
+<%
+
+//======================================================
+// Helper function
+//======================================================
+
+function getTagArray(posts){
+    var tagObj = {}
+    posts.forEach(function(post){
+        post.tags.forEach(function (tag) {
+            if(!tagObj[tag.name])
+                tagObj[tag.name] = 0
+            tagObj[tag.name]++
+        })
+    })
+    var min,max,count = 0
+    for(var k in tagObj){
+        count++
+        if (count == 1) {
+            min = max = tagObj[k]
+            continue
+        }
+
+        if(tagObj[k]>max)
+            max = tagObj[k]
+        if(tagObj[k]<min)
+            min = tagObj[k]
+    }
+
+    return {
+        min:min,
+        max:max,
+        tagObj:tagObj
+    }
+}
+//将rgb转换成16进制
+function RGB2Color(r,g,b) {
+    return '#' + byte2Hex(r) + byte2Hex(g) + byte2Hex(b);
+}
+//将rgb分量装换成对应的两位十六进制形式 170=>AA
+function byte2Hex(n) {
+    var nybHexString = "0123456789ABCDEF";
+    return String(nybHexString.substr((n >> 4) & 0x0F,1)) + nybHexString.substr(n & 0x0F,1);
+}
+    function getCurrentDate(date){
+        var month = (date.month()/10)<1? `0${date.month()}`:`${date.month()}`
+        var day = (date.date()/10)<1? `0${date.date()}`:`${date.date()}`
+        return `${date.year()}-${month}-${day}`
+    }
+
+    function isTag(tag,tags) {
+        var isTagIn = false
+        tags.forEach(function (o) {
+            if(tag === o.name)
+                isTagIn = true
+        })
+        return isTagIn
+    }
+
+%>

@@ -65,7 +65,7 @@ page_nav:
     target_blank: false
     icon: icon-sort
   - name: 标签
-    url: /tag/
+    url: /tags/
     target_blank: false
     icon: icon-tag
   - name: 友链
