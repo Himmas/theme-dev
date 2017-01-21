@@ -265,6 +265,29 @@ code {
   border-radius: 2px;
   white-space: nowrap;
 }
+table {
+  display: block;
+  width: 100%;
+  //overflow: auto
+}
+
+table th {
+  font-weight: bold
+}
+
+table th,table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd
+}
+
+table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8
+}
 em {
   color: #7f8c8d;
 }
@@ -296,6 +319,8 @@ a.button.white {
 .highlight table,
 .highlight tr,
 .highlight td {
+  border: none;
+  background: transparent;
   width: 100%;
   border-collapse: collapse;
   padding: 0;
@@ -305,6 +330,7 @@ a.button.white {
   width: 1.5em;
   .line{
     line-height: 1.5em;
+    min-height: 1.5em;
   }
 }
 .highlight .code pre {

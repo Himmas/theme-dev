@@ -1,6 +1,6 @@
 {
-  "name": "fexo",
-  "version": "1.0.0",
+  "name": "himmas",
+  "version": "0.0.1",
   "devDependencies": {
     "autoprefixer": "^6.3.3",
     "babel": "^6.5.2",
